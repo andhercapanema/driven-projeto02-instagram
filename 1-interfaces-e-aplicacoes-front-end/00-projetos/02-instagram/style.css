@@ -1,0 +1,606 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #262626;
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* top-bar-mobile */
+
+.top-bar-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 54px;
+    border-bottom: 1px solid #DBDBDB;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: 1;
+}
+
+.top-bar-mobile ion-icon {
+    margin: 0 20px;
+    font-size: 22px;
+}
+
+.top-bar-mobile img {
+    height: 29px;
+    width: 103px;
+}
+
+/* top-bar-desktop */
+
+.top-bar-wrapper {
+    display: none;
+
+    border-bottom: 1px solid #DBDBDB;
+    height: 55px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: 1;
+    padding: 0 20px;
+}
+
+.top-bar-desktop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 54px;
+    width: 100%;
+}
+
+.top-bar-desktop div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top-bar-desktop div:first-child {
+    width: 146px;
+}
+
+.top-bar-desktop ion-icon {
+    font-size: 22px;
+}
+
+.top-bar-desktop div div {
+    border-left: 1px solid #dbdbdb;
+    height: 22px;
+}
+
+.top-bar-desktop img {
+    height: 29px;
+    width: 103px;
+}
+
+/* se eu utilizar:
+".top-bar-desktop input"
+o css será aplicado apenas aos filhos diretos de .topbar-desktop que forem do tipo input */
+
+.top-bar-desktop input {
+    width: 215px;
+    height: 28px;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    background: #fafafa;
+    /* text-align: center; */
+}
+
+/* FALTOU EDITAR O PLACEHOLDER!
+Da forma como editei agora, o placeholder está centralizado, porém quando preenche o input, o texto é alinhado a esquerda (por ser o padrão) */
+
+/* pseudo-elements (::) são usados para acessar um atributo dentro do elemento, enquanto pseudo-classes (:) são usadas para acessar um evento */
+
+.top-bar-desktop input::placeholder {
+    color: #979797;
+    text-align: center;
+}
+
+.top-bar-desktop div:last-child {
+    width: 148px;
+}
+
+/* STORIES-BAR */
+
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 943px;
+    margin-top: 54px;
+}
+
+.stories-and-feed {
+    width: 100%;
+    position: relative;
+}
+
+.stories-bar {
+    height: 121px;
+    display: flex;
+    align-items: center;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+
+.stories-bar::-webkit-scrollbar {
+    display: none;
+}
+
+.storie {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 15px;
+    max-width: 66px;
+}
+
+.storie div {
+    position: relative;
+    margin-bottom: 1px;
+}
+
+.storie div img:first-of-type {
+    width: 66px;
+    border-radius: 50%;
+}
+
+.storie div img:last-of-type {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+
+    width: 56px;
+    border-radius: 50%;
+}
+
+/* Anteriormente eu tinha utilizado background-image para iserir o fundo dos stories, mas após a aula utilizei o position: absolute | relative */
+
+/* .storie div {
+    background-image: url(./img/stories-bar/stories_background.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 66px;
+    width: 66px;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1px;
+}
+
+.storie:last-of-type div {
+    justify-content: flex-start;
+}
+
+.storie:last-of-type div img {
+    padding-left: 5px;
+} */
+
+.storie p {
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.button {
+    height: 26px;
+    width: 26px;
+    position: absolute;
+    right: 8px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgb(100, 100, 100);
+    display: none;
+}
+
+.button ion-icon {
+    color: #fff;
+    font-size: 32px;
+    position: absolute;
+    bottom: -3px;
+    left: -3px;
+}
+
+/* FEED */
+
+.feed {
+    margin-bottom: -6px;
+}
+
+.post {
+    background-color: #fff;
+    border-top: 1px solid #DBDBDB;
+    border-bottom: 1px solid #DBDBDB;
+    margin-bottom: 60px;
+}
+
+/* ------------------------- */
+
+.post-top {
+    height: 61px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.post-top div {
+    display: flex;
+    align-items: center;
+}
+
+.post-top img:first-of-type {
+    width: 32px;
+    margin: 0 17px;
+    border-radius: 50%;
+}
+
+.post-top ion-icon {
+    margin: 0 17px;
+}
+
+.post-top div p {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #262626;
+}
+
+/* ------------------------- */
+
+.post img:nth-child(2) {
+    width: 100%;
+    border-top: 1px solid #efefef;
+    border-bottom: 1px solid #efefef;
+}
+
+/* ------------------------- */
+
+.reaction {
+    height: 29px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.reaction div {
+    width: 93px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 15px;
+}
+
+.reaction div ion-icon {
+    font-size: 22px;
+    margin: 0;
+}
+
+.reaction ion-icon {
+    font-size: 19.8px;
+    margin: 0 15px;
+}
+
+/* ------------------------- */
+
+.likes {
+    height: 47px;
+    display: flex;
+    align-items: center;
+}
+
+.likes img {
+    height: 20px;
+    margin-left: 17px;
+    margin-right: 5px;
+}
+
+.post p {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000;
+}
+
+.post div:nth-of-type(4) {
+    margin-left: 17px;
+    margin-top: -3.5px;
+    align-self: center;
+}
+
+.post em {
+    color: #00376B;
+}
+
+.post div:nth-of-type(5) {
+    margin-left: 17px;
+    margin-top: 12px;
+}
+
+h4 {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16px;
+    color: #8e8e8e;
+}
+
+.post div:nth-of-type(6) {
+    margin: 14px 17px 0;
+    height: 39px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.post div:nth-of-type(6) div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.post div:nth-of-type(7) {
+    margin-left: 17px;
+    margin-top: 14px;
+    margin-bottom: 14px;
+    color: #8e8e8e;
+    font-weight: 300;
+    font-size: 11px;
+    width: 70px;
+}
+
+.post div:nth-of-type(8) {
+    display: none;
+
+    padding: 0 17px;
+    margin-top: 17px;
+    border-top: 1px solid #DBDBDB;
+    height: 48px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.post div:nth-of-type(8) ion-icon {
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.post div:nth-of-type(8) input {
+    border: none;
+    width: 480px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #c1c1c1;
+}
+
+h3 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #b2dffc;
+}
+
+h3:hover {
+    color: #0095f6;
+    transition: 300ms;
+    cursor: pointer;
+}
+
+/* VIDEO */
+
+video {
+    width: 100%;
+    max-height: 612px;
+}
+
+/* SIDE-BAR */
+.side-bar {
+    display: none;
+
+    height: 443px;
+    width: 300px;
+    position: fixed;
+    right: calc((100% - 934px)/2);
+}
+
+.side-bar div {
+    display: flex;
+    align-items: center;
+}
+
+.user-info {
+    margin-bottom: 24px;
+}
+
+.user-info img {
+    margin-right: 17px;
+}
+
+.user-info p,
+.user-info strong {
+    font-size: 14px;
+    line-height: 16px;
+    color: #262626;
+}
+
+.user-info p {
+    color: #8e8e8e;
+}
+
+.side-bar div:nth-child(2) {
+    justify-content: space-between;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    margin-bottom: 17px;
+}
+
+.side-bar div:nth-child(2) p:first-child {
+    color: #8e8e8e;
+}
+
+.sugestions {
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.sugestions div img {
+    margin-right: 11px;
+}
+
+.sugestions div p {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: #8e8e8e;
+}
+
+.sugestions div strong {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #262626;
+}
+
+h6 {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: #139EF2;
+}
+
+h5 {
+    margin-top: 18px;
+    font-size: 11px;
+    line-height: 13px;
+    color: #c7c7c7;
+}
+
+/* BOTTOM-BAR */
+
+.bottom-bar {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    height: 54px;
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bottom-bar ion-icon {
+    font-size: 22px;
+    margin: 0 20px;
+}
+
+ion-icon,
+.top-bar-mobile img,
+.top-bar-desktop img,
+.storie,
+.button,
+.post img,
+.post-top p,
+strong,
+h4,
+.post div:nth-of-type(7),
+.side-bar img,
+.user-info p,
+.side-bar div:nth-child(2) p:last-child,
+h6,
+h5:first-of-type {
+    cursor: pointer;
+}
+
+.reaction ion-icon:hover,
+.post div:nth-of-type(6) ion-icon:hover {
+    filter: brightness(4);
+}
+
+.post div:nth-of-type(4) strong:hover,
+.post div:nth-of-type(6) strong:hover,
+.sugestions strong:hover,
+h5:first-of-type:hover {
+    text-decoration: underline;
+}
+
+@media (min-width: 614px) {
+    .top-bar-mobile {
+        display: none;
+    }
+
+    .top-bar-wrapper {
+        display: flex;
+    }
+
+    .container {
+        margin-top: 88px;
+    }
+
+    .stories-and-feed {
+        width: 614px;
+        align-self: center;
+    }
+
+    .stories-bar {
+        height: 118px;
+        background-color: #fff;
+        border: 1px solid #dbdbdb;
+        border-radius: 3px;
+    }
+
+    .feed {
+        margin-top: 24px;
+    }
+
+    .post {
+        border: 1px solid #DBDBDB;
+        border-radius: 3px;
+    }
+
+    .post div:nth-of-type(7) {
+        margin-bottom: 0px;
+    }
+
+    .post div:nth-of-type(8) {
+        display: flex;
+    }
+
+    .bottom-bar {
+        display: none;
+    }
+
+    .button {
+        display: inherit;
+    }
+}
+
+@media (min-width: 935px) {
+    .top-bar-desktop {
+        padding: 0 calc((100% - 935px)/2);  /* poderia ter colocado width de 935 px, seria mais simples */
+    }
+
+    .container {
+        justify-content: space-between;
+    }
+
+    .stories-and-feed {
+        width: 614px;
+    }
+
+    .side-bar {
+        display: block;
+    }
+}
